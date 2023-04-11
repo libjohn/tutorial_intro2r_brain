@@ -2,7 +2,7 @@
 title: "Intro to R for Communication Sciences"
 ---
 
-This is a Quarto website. Quarto is use to publish your analysis into various formats (PDF, Word, Website, Interactive, etc.) To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
+This is a Quarto website authored with [R](https://www.r-project.org/) and the [RStudio IDE](https://posit.co/products/open-source/rstudio/). Quarto is used to publish your analysis into various formats (PDF, Word, Website, Interactive, etc.) To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
 
 We'll learn
 
@@ -18,4 +18,4 @@ We'll learn
     -   R / RStudio
     -   Clone Code from GitHub
 2.  Start a new project by importing the github repository for this workshop
-    -   <https://github.com/libjohn/tutorial_FOO_FOO.git>
+    -   <https://github.com/libjohn/tutorial_intro2r_brain.git>

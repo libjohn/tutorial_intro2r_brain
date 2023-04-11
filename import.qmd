@@ -2,17 +2,17 @@
 title: "Import Data"
 ---
 
-In this workshop we recommend the [tidyverse](https://tidyverse.org) approach to learning and using R
+In this workshop we recommend the [Tidyverse](https://tidyverse.org) approach to learning and using R
 
-Tidyverse has several very handy library packages
+Below are some of the core [*tidyverse*](https://tidyverse.tidyverse.org/) packages. There are many more very handy tidyverse packages.
 
-| package   | use                | package     | use                 |
-|-----------|--------------------|-------------|---------------------|
-| `dplyr`   | data wrangling     | `forcats`   | categorical data    |
-| `ggplot2` | visualization      | `lubridate` | dates and times     |
-| `readr`   | import CSV         | `stringr`   | regular expressions |
-| `purrr`   | iteration          | `tidyr`     | pivot data          |
-| `readxl`  | import Excel files |             |                     |
+| package   | use                               | package     | use                           |
+|-----------|-----------------------------------|-------------|-------------------------------|
+| `dplyr`   | data wrangling                    | `forcats`   | categorical data / factors    |
+| `ggplot2` | visualization                     | `lubridate` | dates and times               |
+| `readr`   | import CSV                        | `stringr`   | regular expressions / strings |
+| `purrr`   | iteration / functional programing | `tidyr`     | pivot data                    |
+| `readxl`  | import Excel files                | `haven`     |  import SPSS/Stata/SAS        |
 
 ## Load library packages
 
@@ -149,4 +149,21 @@ brodhead_center |>
 brodhead_center |> 
   ggplot(aes(x = rating, y = cost)) +
   geom_point(aes(color = name))
+```
+
+```{r}
+#| code-fold: true
+#| code-summary: "Show the code"
+brodhead_center |> 
+  drop_na(rating, cost, name) |> 
+  ggplot(aes(x = factor(rating), y = cost)) +
+  geom_tile(aes(fill = name)) +
+  scale_y_continuous(label = scales::dollar) +
+  scale_fill_brewer(palette = "Dark2") + 
+  labs(x = "rating", y = NULL, title = "Heatmap: cost over ratings", 
+       caption = "Source: https://github.com/libjohn/tutorial_intro2r_brain",
+       fill = "Restaurant name") +
+  theme_classic() +
+  theme(plot.title.position = "plot")
+  
 ```

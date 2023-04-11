@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Intro2r: CommSci @ USC - About</title>
+<title>Intro2r: CommSci @ USC - Two-day R data-science workshop</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -92,7 +92,7 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text">Example EDA</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./about.html" aria-current="page">
+    <a class="nav-link" href="./about.html">
  <span class="menu-text">About</span></a>
   </li>  
 </ul>
@@ -110,16 +110,27 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#john-little" id="toc-john-little" class="nav-link active" data-scroll-target="#john-little">John Little</a></li>
+  <li><a href="#day-one" id="toc-day-one" class="nav-link active" data-scroll-target="#day-one">Day One:</a>
+  <ul class="collapse">
+  <li><a href="#part-1---getting-started" id="toc-part-1---getting-started" class="nav-link" data-scroll-target="#part-1---getting-started">Part 1 - getting started</a></li>
+  <li><a href="#part-2---visualization-plus-eda" id="toc-part-2---visualization-plus-eda" class="nav-link" data-scroll-target="#part-2---visualization-plus-eda">Part 2 - visualization plus EDA</a></li>
+  </ul></li>
+  <li><a href="#day-two" id="toc-day-two" class="nav-link" data-scroll-target="#day-two">Day Two</a>
+  <ul class="collapse">
+  <li><a href="#part-3-iteration-and-custom-functions" id="toc-part-3-iteration-and-custom-functions" class="nav-link" data-scroll-target="#part-3-iteration-and-custom-functions">Part 3 Iteration and custom functions</a></li>
+  <li><a href="#part-4-review-questions-case-study-reports" id="toc-part-4-review-questions-case-study-reports" class="nav-link" data-scroll-target="#part-4-review-questions-case-study-reports">Part 4 Review, questions, case study, reports</a></li>
+  </ul></li>
+  <li><a href="#resources" id="toc-resources" class="nav-link" data-scroll-target="#resources">Resources</a></li>
+  <li><a href="#recommendations" id="toc-recommendations" class="nav-link" data-scroll-target="#recommendations">Recommendations</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
-<main class="content page-columns page-full" id="quarto-document-content">
+<main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">About</h1>
+<h1 class="title">Two-day R data-science workshop</h1>
 </div>
 
 
@@ -134,19 +145,170 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<p>This website is composed in the <a href="https://posit.co/download/rstudio-desktop/">RStudio IDE</a>, as <a href="https://en.wikipedia.org/wiki/R_(programming_language)">R code</a> authored as a <a href="https://quarto.org/">Quarto</a> notebooks. With Quarto it is easy to render multiple report formats such as a PDF document or this website. In this case the report format is a <a href="https://libjohn.quarto.pub/intro2r-datafestduke/">web site hosted at Quarto.pub</a>. The code for this workshop and this webpage are all part of a single RStudio project that can be <a href="https://github.com/libjohn/tutorial_intro2r_brain">found in a GitHub repository</a>. The code-along exercises for this workshop are in the GitHub repository but they are not part of the web site. You can work through the exercises by first downloading the GitHub repository. Then find the exercises within the <code>_exercises</code> directory.</p>
-<p>You can find an <a href="./outline.html"><strong>outline</strong> for this two-day</a> workshop. For more information or resource on learning R, please also visit the <a href="https://Rfun.library.duke.edu">Rfun learning series</a>.</p>
-<section id="john-little" class="level2 page-columns page-full">
-<h2 class="anchored" data-anchor-id="john-little">John Little</h2>
-<p>John is a Data Science Librarian in the <a href="https://library.duke.edu/data">Center for Data &amp; Visualization Sciences</a>, Duke University Libraries. A self-identified data-geek, John likes helping researchers navigate practical data science challenges through workshops and consultation.&nbsp; To that end, John developed the <em>R we having fun yet‽</em> learning resource (<a href="https://rfun.library.duke.edu">https://Rfun.library.duke.edu</a>).</p>
-
-<div class="no-row-height column-margin column-container"><div class="">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="https://johnlittle.info"><img src="images/john_2023.png" class="img-fluid figure-img" width="170"></a></p>
-</figure>
-</div>
-</div></div><p>At Duke University John strives to present workshops focused on revealing R as a data-first coding language; extolling the virtues of the Tidyverse dialect; and modeling Reproducibility as a meaningful way to generate transparent analysis.&nbsp; John maintains an active YouTube channel with recording of previously offered workshops:&nbsp; <a href="https://youtu.be/@johnlittle1">https://youtu.be/@johnlittle1</a></p>
+<section id="day-one" class="level2">
+<h2 class="anchored" data-anchor-id="day-one">Day One:</h2>
+<section id="part-1---getting-started" class="level3">
+<h3 class="anchored" data-anchor-id="part-1---getting-started">Part 1 - getting started</h3>
+<ul>
+<li><p>What is R</p>
+<ul>
+<li><p>data-first programming/coding language</p></li>
+<li><p>extend R with domain-specific <strong>packages</strong>. See: <a href="https://www.r-pkg.org/">MetaCran</a>, <a href="https://cran.r-project.org/">CRAN</a>, github, <a href="https://www.bioconductor.org/">bioconductor</a></p></li>
+</ul></li>
+<li><p>What is the <a href="https://www.tidyverse.org/">Tidyverse</a></p></li>
+<li><p>What is <a href="https://r4ds.had.co.nz/tidy-data.html">Tidy data</a></p></li>
+<li><p>How data-first tools help with reproducible workflows and computational thinking</p>
+<ul>
+<li><p>blank-slate instead of .Rdata</p></li>
+<li><p>Restart instead of <code>rm(list = ls())</code></p></li>
+</ul></li>
+<li><p>Tool suite</p>
+<ul>
+<li><p>RStudio</p></li>
+<li><p>Quarto Notebooks (Merging literate coding with Report rendering)</p></li>
+<li><p>{<code>dplyr</code>} &amp; {<code>tidyr</code>} - a grammar for data wrangling</p></li>
+<li><p>{<code>ggplot2</code>} - a grammar of graphics</p></li>
+<li><p>Other packages e.g.&nbsp;{<code>readr</code>}, {<code>forcats</code>}, {<code>stringr</code>}, {<code>purrr</code>}, {<code>tidymodels</code>}</p></li>
+</ul></li>
+<li><p>RStudio Projects and reproducibility</p>
+<ul>
+<li><p>Version Control: git and GitHub</p></li>
+<li><p><strong>excise</strong> <code>setwd()</code> and <code>rm(list = ls())</code></p></li>
+</ul></li>
+<li><p>Vectorized iteration ; environment variables ; pipes ; assignment</p>
+<ul>
+<li><p>pipes = <code>|&gt;</code> and <code>%&gt;%</code></p></li>
+<li><p>Assignment variables: <code>&lt;-</code> and <code>=</code> (not the same as equivalency <code>==</code>)</p></li>
+<li><p>Functional programming means customizing the functions and iterating without FOR loops</p></li>
+</ul></li>
+<li><p>Import CSV data</p>
+<ul>
+<li><p><code>read_csv()</code> and the data import wizard found in <em>Files</em> tab and <em>Environment</em> tab</p></li>
+<li><p>Other data formats</p>
+<ul>
+<li>{<code>readxl</code>}, {<code>haven</code>}</li>
+</ul></li>
+<li><p>SQL</p>
+<ul>
+<li><p>Code-chunks can perform SQL</p></li>
+<li><p>{<code>dbplyr</code>}</p></li>
+<li><p><a href="https://solutions.posit.co/connections/db/">Best Practices with Databases</a></p></li>
+</ul></li>
+<li><p>Exercise</p>
+<ul>
+<li><p>import a CSV file</p></li>
+<li><p>import a Stata categorical file using {<em>haven</em>}</p></li>
+</ul></li>
+</ul></li>
+<li><p>{<code>dplyr</code>}</p>
+<ul>
+<li><p>select(), filter(), arrange(), mutate(), group_by(), summarize(), count()</p></li>
+<li><p><strong>Exercise</strong></p></li>
+<li><p>Semantic meaning in data&nbsp;</p></li>
+<li><p>Codebooks in a literate coding context</p></li>
+</ul></li>
+</ul>
+<p><br>
+</p>
+</section>
+<section id="part-2---visualization-plus-eda" class="level3">
+<h3 class="anchored" data-anchor-id="part-2---visualization-plus-eda">Part 2 - visualization plus EDA</h3>
+<ul>
+<li><p>{ggplot2} viz</p>
+<ul>
+<li><strong>Exercise</strong></li>
+</ul></li>
+<li><p>basic interactivity - ggplotly()</p>
+<ul>
+<li><strong>Exercise</strong></li>
+</ul></li>
+<li><p>{<code>broom</code>} and handling modeling outputs (e.g.&nbsp;linear regression)</p>
+<ul>
+<li><p>Advertise {<code>tidymodels</code>}</p></li>
+<li><p><strong>Exercise</strong></p></li>
+</ul></li>
+<li><p>{skimr} and EDA&nbsp;</p>
+<ul>
+<li><p>skim()</p></li>
+<li><p>Reprise group_by() and summarize()&nbsp;</p></li>
+</ul></li>
+<li><p>{<code>tidyr</code>} pivot_longer() and pivot_wider()</p>
+<ul>
+<li><p><strong>Tall data</strong> - what is it?</p></li>
+<li><p>Tall data for iteration: computation&nbsp;</p></li>
+<li><p>Tall data for visualization , facet_wrap()</p></li>
+<li><p>Tall data for modeling ; {purrr} a first look.</p></li>
+</ul></li>
+<li><p>Wrap-up and Summarize the day</p></li>
+</ul>
+<p><br>
+</p>
+</section>
+</section>
+<section id="day-two" class="level2">
+<h2 class="anchored" data-anchor-id="day-two">Day Two</h2>
+<section id="part-3-iteration-and-custom-functions" class="level3">
+<h3 class="anchored" data-anchor-id="part-3-iteration-and-custom-functions">Part 3 Iteration and custom functions</h3>
+<ul>
+<li><p>Questions from yesterday</p></li>
+<li><p>R is a functional programming language</p>
+<ul>
+<li><p>What does that mean?</p></li>
+<li><p>FOR loops?</p></li>
+<li><p>Tidyverse preference for data frames</p></li>
+</ul></li>
+<li><p>Vectorized math (review)</p></li>
+<li><p>Case study - import multiple data files + data cleaning + analysis + visualization</p>
+<ul>
+<li>read_csv() again</li>
+</ul></li>
+<li><p>Introduce {stringr} and regular expressions</p></li>
+<li><p>Some nifty data wrangling functions</p></li>
+<li><p>Composing custom functions</p></li>
+<li><p>Nesting data for iteration</p></li>
+</ul>
+<p><br>
+</p>
+</section>
+<section id="part-4-review-questions-case-study-reports" class="level3">
+<h3 class="anchored" data-anchor-id="part-4-review-questions-case-study-reports">Part 4 Review, questions, case study, reports</h3>
+<ul>
+<li><p>Questions / Review</p></li>
+<li><p>Setup case study</p></li>
+<li><p>Using R to orchestrate data workflows</p></li>
+<li><p>Reproducible report rendering (slides, PDF, dashboards, etc.)</p></li>
+<li><p>Summarize</p></li>
+<li><p>Finding help</p></li>
+</ul>
+</section>
+</section>
+<section id="resources" class="level2">
+<h2 class="anchored" data-anchor-id="resources">Resources</h2>
+<ul>
+<li><p>R for Data Science: <a href="https://r4ds.had.co.nz/">book</a> | <a href="https://www.rfordatasci.com/">slack</a></p></li>
+<li><p>Tidyverse <a href="https://posit.cloud/learn/primers">primers</a></p></li>
+<li><p>RStudio IDE &gt; Help &gt; [ Documentation | Forum | Cheatsheets | Shortcuts ] &amp; on-board <em>Help</em> tab</p>
+<ul>
+<li><a href="https://docs.posit.co/ide/user/">RStudio User Guide</a></li>
+</ul></li>
+<li><p>Tidyverse webpages: {<code>package_name</code>}.tidyverse.org (e.g.&nbsp;ggplot2.tidyverse.org)</p></li>
+<li><p>Interactivity</p>
+<ul>
+<li><p><a href="https://www.htmlwidgets.org">HTMLWidgets</a></p></li>
+<li><p><a href="https://quarto.org/docs/interactive/ojs/">ObservableJS</a></p></li>
+<li><p><a href="https://shiny.rstudio.com/">Shiny</a></p></li>
+</ul></li>
+</ul>
+</section>
+<section id="recommendations" class="level2">
+<h2 class="anchored" data-anchor-id="recommendations">Recommendations</h2>
+<ul>
+<li><p><a href="https://docs.posit.co/ide/user/ide/get-started/#blank-slate">Blank slate</a></p></li>
+<li><p>Use the Projects in the RStudio IDE</p></li>
+<li><p>Use version control (git and GitHub)</p></li>
+<li><p>Use {<a href="https://rstudio.github.io/renv/index.html"><code>renv</code></a>} for package reproducible environments</p></li>
+<li><p>Use <a href="https://mybinder.org/">mybinder.org</a> for sharing containers in a reproducible/replicable state</p></li>
+</ul>
 
 
 </section>
