@@ -209,28 +209,32 @@ starwars %>%
 
 Each layer, visualized by a geom\_ function, can support local arguments and draw from the global settings. Below we use the `geom_line()` function, followed by the `geom_point()` function.
 
-    babynames %>%
-      ggplot(aes(year, prop)) +
-      geom_line(aes(color = sex)) +
-      geom_point(alpha = 0.4, shape = "cross")
+```         
+babynames %>%
+  ggplot(aes(year, prop)) +
+  geom_line(aes(color = sex)) +
+  geom_point(alpha = 0.4, shape = "cross")
+```
 
 ![](images/line_graph_je_names.png)
 
 The full code for the above graph can be seen below.
 
-    library(babynames)
-    library(ggplot)
+```         
+library(babynames)
+library(ggplot)
 
-    babynames %>% 
-      filter(name == "John" & sex == "M" | 
-               name == "Elizabeth" & sex == "F") %>% 
-      ggplot(aes(year, prop)) +
-      geom_line(aes(color = sex)) +
-      geom_point(alpha = 0.4, shape = "cross") +
-      geom_text(data = . %>% filter(year == 1965), aes(label = name),
-                nudge_y = .009) +
-      labs(title = "Name Popularity") + 
-      theme(legend.position = "none")
+babynames %>% 
+  filter(name == "John" & sex == "M" | 
+           name == "Elizabeth" & sex == "F") %>% 
+  ggplot(aes(year, prop)) +
+  geom_line(aes(color = sex)) +
+  geom_point(alpha = 0.4, shape = "cross") +
+  geom_text(data = . %>% filter(year == 1965), aes(label = name),
+            nudge_y = .009) +
+  labs(title = "Name Popularity") + 
+  theme(legend.position = "none")
+```
 
 ### Goal
 
@@ -396,7 +400,7 @@ See more on [themes](https://ggplot2.tidyverse.org/reference/index.html#section-
 
 ### Example themes
 
-![Image source:  from R for Data Science by Grolemund & Wickham](https://r4ds.had.co.nz/images/visualization-themes.png){height=6in}
+![Image source: from R for Data Science by Grolemund & Wickham](https://r4ds.had.co.nz/images/visualization-themes.png){height="6in"}
 
 ### theme_dark()
 

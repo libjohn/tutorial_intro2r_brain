@@ -19,22 +19,18 @@ starwars |>
   
 ```
 
-Make a stacked bar plot, as above, using the `fill` argument. Stack the bars with the values of the `sex` variable. Assign the plot to an object name of `star_gender`.
+Make a stacked barplot using the `fill` argument. Stack the bars with the values of the `sex` variable. Assign the plot to an object name: `star_gender`.
 
 ```{r}
-_________ <- starwars |> 
+star_gender <- starwars |> 
   ggplot(aes(gender)) +
-  geom_bar(aes(____ = sex))
+  geom_bar(aes(fill = sex))
 star_gender
 ```
-
-Using the {`plotly`} package
 
 ```{r}
 library(plotly)
 ```
-
-Make the `star_gender` object interactive
 
 ```{r}
 ggplotly(star_gender)

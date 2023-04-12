@@ -33,12 +33,21 @@ economics_long %>% arrange(date)
 
 ## Goal
 
-using one of the dplyr pivot functions, pivot the economics data to long format
+Using one of the dplyr pivot functions, pivot the economics data to long format
 
 ```{r}
-#| eval: false
 economics %>% 
   pivot_------(cols = pce:unemploy, 
                names_to = "variable", 
                values_to = "value") 
+```
+
+Now that the data are long. Can you use the `facet_wrap()` function to make multiple line plots, one line plot for each `variable` category?
+
+```{r}
+economics |> 
+  pivot_longer(-date, names_to = "variable", values_to = "value") |> 
+  ggplot(aes(date, value)) +
+  geom____() + 
+  facet_wrap(vars(_______))
 ```

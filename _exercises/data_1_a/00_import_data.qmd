@@ -48,7 +48,7 @@ _____  <- read_csv(________)
 starwars %>% 
   ggplot(aes(fct_infreq(hair_color))) + 
   geom_bar() + 
-  ggtitle("Hair Color Frequency of Star Wars Characters")
+  ggtitle("Hair color frequency for Star Wars Characters")
 ```
 
 ### BONUS 1
@@ -59,7 +59,7 @@ starwars %>%
     -   How many variables (columns) are there?
     -   How many of the variables are numeric data?
 
-    HINT: You can use the `glimpse() function`
+    HINT: You can use the `glimpse()` function
 
 > ANSWER can be found in exercise_00_answers.Rmd file
 

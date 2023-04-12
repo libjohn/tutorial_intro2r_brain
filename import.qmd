@@ -7,7 +7,7 @@ In this workshop we recommend the [Tidyverse](https://tidyverse.org) approach to
 Below are some of the core [*tidyverse*](https://tidyverse.tidyverse.org/) packages. There are many more very handy tidyverse packages.
 
 | package   | use                               | package     | use                           |
-|-----------|-----------------------------------|-------------|-------------------------------|
+|--------------|------------------------|--------------|---------------------|
 | `dplyr`   | data wrangling                    | `forcats`   | categorical data / factors    |
 | `ggplot2` | visualization                     | `lubridate` | dates and times               |
 | `readr`   | import CSV                        | `stringr`   | regular expressions / strings |
@@ -29,7 +29,7 @@ In RStudio,, in the Files quadrant and tab, click the `data` folder, then left-c
 ```{r}
 # library(readr)
 brodhead_center <- read_csv("data/brodhead_center.csv")
-# View(brodheadCenter)
+# view(brodheadCenter)
 ```
 
 ### Look at the data object

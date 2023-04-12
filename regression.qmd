@@ -81,6 +81,8 @@ summary(score_model)
 
 ## the tidy way
 
+The {`broom`} package is useful for containing the outcomes of some models as data frames. A more holistic approach to tidy modeling is to use the {[`tidymodels`](https://tidymodels.org)} package/approach
+
 ### broom
 
 tidy the model fit with broom::tidy()

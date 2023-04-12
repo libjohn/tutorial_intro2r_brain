@@ -48,3 +48,13 @@ or
 economics |> 
   pivot_longer(-date, names_to = "variable", values_to = "value")
 ```
+
+Now that the data are long. Can you use the `facet_wrap()` function to make multiple line plots, one line plot for each `variable` category?
+
+```{r}
+economics |> 
+  pivot_longer(-date, names_to = "variable", values_to = "value") |> 
+  ggplot(aes(date, value)) +
+  geom_line() + 
+  facet_wrap(vars(variable))
+```
