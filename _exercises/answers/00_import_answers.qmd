@@ -58,3 +58,27 @@ starwars %>%
 ```{r}
 glimpse(brodhead)
 ```
+
+## Bonus 2
+
+Importing labeled vectors from an spss file format. Import via the `haven::read_sav()` function
+
+```{r}
+library(haven)
+library(here)
+
+my_labeled_vectors_df <- 
+  read_sav(here("data", "student_satisfaction_test_data_from_qualtrics.sav"))
+
+my_labeled_vectors_df
+
+my_labeled_vectors_df |> 
+  select(Q2) |> 
+  mutate(Q2_labels = as_factor(Q2))
+
+my_labeled_vectors_df |> 
+  select(ResponseId, starts_with("Q")) |> 
+  mutate(across(is.labelled, ~ as_factor(.x), .names = "{.col}_label")) |> 
+  select(ResponseId, sort(tidyselect::peek_vars()))
+
+```

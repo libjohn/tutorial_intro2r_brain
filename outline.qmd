@@ -4,7 +4,7 @@ title: "Two-day R data-science workshop"
 
 ## Day One:
 
-### Part 1 - getting started 
+### Part 1 - getting started
 
 -   What is R
 
@@ -16,17 +16,23 @@ title: "Two-day R data-science workshop"
 
 -   What is [Tidy data](https://r4ds.had.co.nz/tidy-data.html)
 
--   How data-first tools help with reproducible workflows and computational thinking
+-   **Reproducibility**: data-first tools help leverage reproducible workflows throughout computational thinking
 
     -   blank-slate instead of .Rdata
 
     -   Restart instead of `rm(list = ls())`
 
+    -   Intentional use of the RStudio projects feature
+
+    -   Version Control: git and GitHub
+
+    -   {`renv`} for archiving/documenting package environments
+
 -   Tool suite
 
     -   RStudio
 
-    -   Quarto Notebooks (Merging literate coding with Report rendering)
+    -   Quarto Notebooks (Merge literate coding with report rendering)
 
     -   {`dplyr`} & {`tidyr`} - a grammar for data wrangling
 
@@ -34,19 +40,22 @@ title: "Two-day R data-science workshop"
 
     -   Other packages e.g. {`readr`}, {`forcats`}, {`stringr`}, {`purrr`}, {`tidymodels`}
 
--   RStudio Projects and reproducibility
+-   Console
 
-    -   Version Control: git and GitHub
+    -   basic computation
 
-    -   **excise** `setwd()` and `rm(list = ls())`
+    -   vectors and vectorized math
 
--   Vectorized iteration ; environment variables ; pipes ; assignment
+    -   environment variables and data variables
 
-    -   pipes = `|>` and `%>%`
+    -   **assignment** variables: `<-` and `=` (not the same as equivalency `==`)
 
-    -   Assignment variables: `<-` and `=` (not the same as equivalency `==`)
+    -   **pipe**s = `|>` and `%>%`
 
-    -   Functional programming means customizing the functions and iterating without FOR loops
+-   RStudio [Projects](https://docs.posit.co/ide/user/ide/guide/code/projects.html)
+
+    -   use projects instead of `setwd()` ; relative paths are vital to reproducibility
+    -   Documents: Quarto document
 
 -   Import CSV data
 
@@ -64,7 +73,7 @@ title: "Two-day R data-science workshop"
 
         -   [Best Practices with Databases](https://solutions.posit.co/connections/db/)
 
-    -   Exercise
+    -   **Exercise**
 
         -   import a CSV file
 
@@ -126,7 +135,9 @@ title: "Two-day R data-science workshop"
 
 -   R is a functional programming language
 
-    -   What does that mean?
+    -   What is functional programing?
+
+        -   Customizing functions and iterating without FOR loops
 
     -   FOR loops?
 
@@ -134,11 +145,13 @@ title: "Two-day R data-science workshop"
 
 -   Vectorized math (review)
 
+    -   Vectorized iteration ; environment variables and data variables
+
 -   Case study - import multiple data files + data cleaning + analysis + visualization
 
     -   read_csv() again
 
--   Introduce {stringr} and regular expressions
+-   Introduce {`stringr`} and regular expressions
 
 -   Some nifty data wrangling functions
 

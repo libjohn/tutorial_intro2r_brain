@@ -157,29 +157,34 @@ ul.task-list li input[type="checkbox"] {
 </ul></li>
 <li><p>What is the <a href="https://www.tidyverse.org/">Tidyverse</a></p></li>
 <li><p>What is <a href="https://r4ds.had.co.nz/tidy-data.html">Tidy data</a></p></li>
-<li><p>How data-first tools help with reproducible workflows and computational thinking</p>
+<li><p><strong>Reproducibility</strong>: data-first tools help leverage reproducible workflows throughout computational thinking</p>
 <ul>
 <li><p>blank-slate instead of .Rdata</p></li>
 <li><p>Restart instead of <code>rm(list = ls())</code></p></li>
+<li><p>Intentional use of the RStudio projects feature</p></li>
+<li><p>Version Control: git and GitHub</p></li>
+<li><p>{<code>renv</code>} for archiving/documenting package environments</p></li>
 </ul></li>
 <li><p>Tool suite</p>
 <ul>
 <li><p>RStudio</p></li>
-<li><p>Quarto Notebooks (Merging literate coding with Report rendering)</p></li>
+<li><p>Quarto Notebooks (Merge literate coding with report rendering)</p></li>
 <li><p>{<code>dplyr</code>} &amp; {<code>tidyr</code>} - a grammar for data wrangling</p></li>
 <li><p>{<code>ggplot2</code>} - a grammar of graphics</p></li>
 <li><p>Other packages e.g.&nbsp;{<code>readr</code>}, {<code>forcats</code>}, {<code>stringr</code>}, {<code>purrr</code>}, {<code>tidymodels</code>}</p></li>
 </ul></li>
-<li><p>RStudio Projects and reproducibility</p>
+<li><p>Console</p>
 <ul>
-<li><p>Version Control: git and GitHub</p></li>
-<li><p><strong>excise</strong> <code>setwd()</code> and <code>rm(list = ls())</code></p></li>
+<li><p>basic computation</p></li>
+<li><p>vectors and vectorized math</p></li>
+<li><p>environment variables and data variables</p></li>
+<li><p><strong>assignment</strong> variables: <code>&lt;-</code> and <code>=</code> (not the same as equivalency <code>==</code>)</p></li>
+<li><p><strong>pipe</strong>s = <code>|&gt;</code> and <code>%&gt;%</code></p></li>
 </ul></li>
-<li><p>Vectorized iteration ; environment variables ; pipes ; assignment</p>
+<li><p>RStudio <a href="https://docs.posit.co/ide/user/ide/guide/code/projects.html">Projects</a></p>
 <ul>
-<li><p>pipes = <code>|&gt;</code> and <code>%&gt;%</code></p></li>
-<li><p>Assignment variables: <code>&lt;-</code> and <code>=</code> (not the same as equivalency <code>==</code>)</p></li>
-<li><p>Functional programming means customizing the functions and iterating without FOR loops</p></li>
+<li>use projects instead of <code>setwd()</code> ; relative paths are vital to reproducibility</li>
+<li>Documents: Quarto document</li>
 </ul></li>
 <li><p>Import CSV data</p>
 <ul>
@@ -194,7 +199,7 @@ ul.task-list li input[type="checkbox"] {
 <li><p>{<code>dbplyr</code>}</p></li>
 <li><p><a href="https://solutions.posit.co/connections/db/">Best Practices with Databases</a></p></li>
 </ul></li>
-<li><p>Exercise</p>
+<li><p><strong>Exercise</strong></p>
 <ul>
 <li><p>import a CSV file</p></li>
 <li><p>import a Stata categorical file using {<em>haven</em>}</p></li>
@@ -253,16 +258,22 @@ ul.task-list li input[type="checkbox"] {
 <li><p>Questions from yesterday</p></li>
 <li><p>R is a functional programming language</p>
 <ul>
-<li><p>What does that mean?</p></li>
+<li><p>What is functional programing?</p>
+<ul>
+<li>Customizing functions and iterating without FOR loops</li>
+</ul></li>
 <li><p>FOR loops?</p></li>
 <li><p>Tidyverse preference for data frames</p></li>
 </ul></li>
-<li><p>Vectorized math (review)</p></li>
+<li><p>Vectorized math (review)</p>
+<ul>
+<li>Vectorized iteration ; environment variables and data variables</li>
+</ul></li>
 <li><p>Case study - import multiple data files + data cleaning + analysis + visualization</p>
 <ul>
 <li>read_csv() again</li>
 </ul></li>
-<li><p>Introduce {stringr} and regular expressions</p></li>
+<li><p>Introduce {<code>stringr</code>} and regular expressions</p></li>
 <li><p>Some nifty data wrangling functions</p></li>
 <li><p>Composing custom functions</p></li>
 <li><p>Nesting data for iteration</p></li>
