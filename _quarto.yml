@@ -8,7 +8,17 @@ website:
       - href: index.qmd
         text: Home
       - href: import.qmd
-        text: Import/Wrangle/Viz
+        text: Import/Wrangle
+      - href: viz.qmd
+        text: Visualization
+      - text: lm/join/pivot
+        menu:
+          - text: regression
+            href: regression.qmd
+          - text: tall/wide
+            href: longer_wider.qmd
+          - text: join
+            href: join.qmd
       - href: tidy_tuesday_itra.qmd
         text: Example EDA
       - about.qmd

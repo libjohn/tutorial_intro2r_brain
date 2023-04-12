@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.2.335">
+<meta name="generator" content="quarto-1.2.280">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -85,8 +85,31 @@ ul.task-list li input[type="checkbox"] {
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="./import.html">
- <span class="menu-text">Import/Wrangle/Viz</span></a>
+ <span class="menu-text">Import/Wrangle</span></a>
   </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./viz.html">
+ <span class="menu-text">Visualization</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-lmjoinpivot" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">lm/join/pivot</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-lmjoinpivot">    
+        <li>
+    <a class="dropdown-item" href="./regression.html">
+ <span class="dropdown-text">regression</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./longer_wider.html">
+ <span class="dropdown-text">tall/wide</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./join.html">
+ <span class="dropdown-text">join</span></a>
+  </li>  
+    </ul>
+  </li>
   <li class="nav-item">
     <a class="nav-link" href="./tidy_tuesday_itra.html">
  <span class="menu-text">Example EDA</span></a>
@@ -137,9 +160,14 @@ ul.task-list li input[type="checkbox"] {
 <p>This is a Quarto website authored with <a href="https://www.r-project.org/">R</a> and the <a href="https://posit.co/products/open-source/rstudio/">RStudio IDE</a>. Quarto is used to publish your analysis into various formats (PDF, Word, Website, Interactive, etc.) To learn more about Quarto websites visit <a href="https://quarto.org/docs/websites" class="uri">https://quarto.org/docs/websites</a>.</p>
 <p>We’ll learn</p>
 <ul>
-<li><p>RStudio Projects</p></li>
-<li><p><a href="./import.html">Importing, wrangling, and visualizing</a> data</p></li>
-<li><p>Show an <a href="./tidy_tuesday_itra.html">example of joining data and Exploratory Data Analysis</a></p></li>
+<li><p>RStudio Projects</p>
+<ul>
+<li><p>Importing files and wrangling</p></li>
+<li><p>Visualizing</p></li>
+<li><p>Pivot / join / EDA</p></li>
+<li><p>Custom functions and iterate with {<code>purrr</code>}</p></li>
+</ul></li>
+<li><p>An <a href="./tidy_tuesday_itra.html">example of joining data and Exploratory Data Analysis</a></p></li>
 </ul>
 <section id="get-started" class="level2">
 <h2 class="anchored" data-anchor-id="get-started">Get started</h2>
@@ -153,6 +181,7 @@ ul.task-list li input[type="checkbox"] {
 <ul>
 <li><a href="https://github.com/libjohn/tutorial_intro2r_brain.git" class="uri">https://github.com/libjohn/tutorial_intro2r_brain.git</a></li>
 </ul></li>
+<li>Open the <code>import.qmd</code> notebook-file from the <em>Files</em> tab in the RStudio IDE</li>
 </ol>
 
 

@@ -13,8 +13,6 @@ format:
 license: CC BY   
 ---
 
-<center>[CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/)</center>
-
 These exercises support your learning after watching the [instructional video](https://warpwire.duke.edu/w/80YEAA/)
 
 ```{r setup}
@@ -67,7 +65,7 @@ mpg %>%
 Make a histogram of the `hwy` variable from `mpg`.
 
 ```{r}
-#| eval: false
+
 ```
 
 ## Your Turn 5
@@ -75,7 +73,7 @@ Make a histogram of the `hwy` variable from `mpg`.
 Make a density plot of `hwy` colored by `class`.
 
 ```{r}
-#| eval: false
+
 ```
 
 ## Your Turn 6
@@ -83,7 +81,7 @@ Make a density plot of `hwy` colored by `class`.
 Make a bar chart `hwy` colored by `class`.
 
 ```{r}
-#| eval: false
+
 ```
 
 ## Your Turn 7
@@ -102,7 +100,6 @@ mpg %>%
 Save the last plot
 
 ```{r}
-#| eval: false
 ggsave(_____)
 # or right-click the image
 ```

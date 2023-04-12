@@ -8,9 +8,15 @@ We'll learn
 
 -   RStudio Projects
 
--   [Importing, wrangling, and visualizing](import.qmd) data
+    -   Importing files and wrangling
 
--   Show an [example of joining data and Exploratory Data Analysis](tidy_tuesday_itra.qmd)
+    -   Visualizing
+
+    -   Pivot / join / EDA
+
+    -   Custom functions and iterate with {`purrr`}
+
+-   An [example of joining data and Exploratory Data Analysis](tidy_tuesday_itra.qmd)
 
 ## Get started
 
@@ -19,3 +25,4 @@ We'll learn
     -   Clone Code from GitHub
 2.  Start a new project by importing the github repository for this workshop
     -   <https://github.com/libjohn/tutorial_intro2r_brain.git>
+3.  Open the `import.qmd` notebook-file from the *Files* tab in the RStudio IDE

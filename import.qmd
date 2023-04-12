@@ -12,7 +12,7 @@ Below are some of the core [*tidyverse*](https://tidyverse.tidyverse.org/) packa
 | `ggplot2` | visualization                     | `lubridate` | dates and times               |
 | `readr`   | import CSV                        | `stringr`   | regular expressions / strings |
 | `purrr`   | iteration / functional programing | `tidyr`     | pivot data                    |
-| `readxl`  | import Excel files                | `haven`     |  import SPSS/Stata/SAS        |
+| `readxl`  | import Excel files                | `haven`     | import SPSS/Stata/SAS         |
 
 ## Load library packages
 

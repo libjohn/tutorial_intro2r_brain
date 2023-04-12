@@ -123,6 +123,8 @@ title: "Two-day R data-science workshop"
 
     -   Tall data for modeling ; {purrr} a first look.
 
+-   join with `dplyr::left_join()` or other {`dplyr`} join functions
+
 -   Wrap-up and Summarize the day
 
 \

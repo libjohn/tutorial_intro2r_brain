@@ -1,7 +1,7 @@
 ---
 title: "Visualize Data in R with ggplot2"
 subtitle: "Exercises"
-abstract: "These exercises are adapted in whole or in part based on the <i>Master the Tidyverse</i> work by Garrett Grolemund at RStudio.  \nCC BY Garrett Grolemund, RStudio ; BY-NC John Little"
+abstract: "These exercises are adapated in whole or in part based on the <i>Master the Tidyverse</i> work by Garrett Grolemund at RStudio.  \nCC BY Garrett Grolemund, RStudio ; BY-NC John Little"
 
 date-modified: 'today'
 date-format: long
@@ -13,9 +13,7 @@ format:
 license: CC BY    
 ---
 
-```{r}
-#| warning: false
-#| message: false
+```{r setup}
 library(tidyverse)
 ```
 
@@ -28,7 +26,8 @@ mpg
 Run the code on the slide to make a graph. Pay strict attention to spelling, capitalization, and parentheses!
 
 ```{r}
-
+ggplot(data = mpg) +
+  geom_point(mapping = aes(x = displ, y = hwy))
 ```
 
 ## Your Turn 2
@@ -36,9 +35,14 @@ Run the code on the slide to make a graph. Pay strict attention to spelling, cap
 Add `color`, `size`, `alpha`, and `shape` aesthetics to your graph. Experiment.
 
 ```{r}
+#| fig-height: 7
 mpg %>% 
   ggplot() +
-  geom_point(mapping = aes(x = displ, y = hwy))
+  geom_point(mapping = aes(x = displ, y = hwy,
+                           color = class,
+                           size = cyl,
+                           shape = drv,
+                           alpha = hwy))
 ```
 
 ## Your Turn 3
@@ -49,6 +53,10 @@ Replace this scatterplot with one that draws boxplots. Use the cheatsheet. Try y
 mpg %>% 
   ggplot() + 
   geom_point(aes(class, hwy))
+
+mpg %>% 
+  ggplot() + 
+  geom_boxplot(aes(class, hwy))
 ```
 
 ## Your Turn 4
@@ -56,7 +64,15 @@ mpg %>%
 Make a histogram of the `hwy` variable from `mpg`.
 
 ```{r}
+mpg %>% 
+  ggplot() +
+  geom_histogram(aes(hwy))
+```
 
+```{r}
+mpg %>% 
+  ggplot() +
+  geom_histogram(aes(hwy), binwidth = 2)
 ```
 
 ## Your Turn 5
@@ -64,7 +80,9 @@ Make a histogram of the `hwy` variable from `mpg`.
 Make a density plot of `hwy` colored by `class`.
 
 ```{r}
-
+mpg %>% 
+  ggplot() +
+    geom_density(mapping = aes(x = hwy, color = class))
 ```
 
 ## Your Turn 6
@@ -72,7 +90,15 @@ Make a density plot of `hwy` colored by `class`.
 Make a bar chart `hwy` colored by `class`.
 
 ```{r}
+mpg %>% 
+  ggplot() +
+  geom_bar(mapping = aes(x = class, color = class))
+```
 
+```{r}
+mpg %>% 
+  ggplot() +
+  geom_bar(mapping = aes(x = class, fill = class))
 ```
 
 ## Your Turn 7
@@ -88,9 +114,9 @@ mpg %>%
 
 ## Your Turn 8
 
-Save the last plot
+Save the last plot.
 
-```{r}
-ggsave()
+``` r
+ggsave("mylastplot.png")
 # or right-click the image
 ```

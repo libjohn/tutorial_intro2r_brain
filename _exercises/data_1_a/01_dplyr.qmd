@@ -56,7 +56,6 @@ All of the following questions are based on the sample of restaurants represente
 1.  Which restaurant has the lowest cost item and what is the item?
 
 ```{r}
-#| eval: false
 brodhead %>% 
   _______(cost) %>% 
   select(name, type, itemName, cost)
@@ -65,7 +64,6 @@ brodhead %>%
 2.  Which restaurant has the most expensive item(s)? What are those item(s)?
 
 ```{r}
-#| eval: false
 brodhead %>% 
   ____(____(cost)) %>% 
   select(name, type, itemName, cost)
@@ -74,7 +72,6 @@ brodhead %>%
 3.  At the Brodhead Center, how many of the entrees (found in the `menuType` variable) cost eight dollars?
 
 ```{r}
-#| eval: false
 brodhead %>% 
   ______(cost == _, menuType == "______") %>% 
   select(name, menuType, itemName, cost)
@@ -83,7 +80,6 @@ brodhead %>%
 4.  The head of Duke dining is considering reducing prices at the Brodhead Center. Using what we've learned in class, write code that will calculate a new variable (`halfPrice`) that contains items at half price.
 
 ```{r}
-#| eval: false
 brodhead %>% 
   ______(halfPrice = (____ / 2)) %>% 
   select(name, itemName, cost, halfPrice)
@@ -92,7 +88,6 @@ brodhead %>%
 5.  How many entrees are in the dataset (`menuType` variable)? How many desserts
 
 ```{r}
-#| eval: false
 brodhead %>% 
   _____(menuType)
 # You can use `filter()` to limit by menuType
@@ -100,7 +95,7 @@ brodhead %>%
 
 ## Answers
 
-> Answers can be found in the exercise_01_answers.Rmd file
+> Answers can be found in the `_exercise_01/answers/01_dplyr_answers.qmd` file
 
 ## Optional
 
