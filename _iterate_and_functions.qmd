@@ -1,5 +1,10 @@
 ---
 title: "Notes for live demo of iteration and custom functions"
+author: 
+  - name: John Little
+    affiliations:
+      - name: Duke University
+        department: Center for Data & Vizualization Sciences
 
 date-modified: 'today'
 date-format: long
@@ -21,6 +26,8 @@ library(tidyverse)
 
 ## Reference code
 
+Iterate by using `ggplot2::facet_wrap()` and tall data.
+
 ```{r}
 gapminder::gapminder |> 
   ggplot(aes(year, pop)) +
@@ -29,18 +36,30 @@ gapminder::gapminder |>
   
 ```
 
+### Example
+
+Using `facet_wrap`, make a scatter plot of mass over height.
+
 ```{r}
 starwars |> 
   filter(mass < 500) |> 
   ggplot(aes(height, mass)) +
   geom_point(aes(color = gender)) +
   facet_wrap(vars(gender), nrow = 3)
+```
 
+### Dilemma
+
+But what if we want to have three separate graphs?
+
+Well, we can write the code by hand, taking into account each variation.
+
+```{r}
 starwars |> 
   filter(mass < 500) |> 
   filter(gender == "masculine") |> 
   ggplot(aes(height, mass)) +
-  geom_point()  + geom_smooth(method = lm, se = FALSE)
+  geom_point()  # + geom_smooth(method = lm, se = FALSE)
 
 starwars |> 
   filter(mass < 500) |> 
@@ -52,21 +71,33 @@ starwars |>
   filter(mass < 500) |> 
   filter(is.na(gender)) |> 
   ggplot(aes(height, mass)) +
-  geom_point() 
+  geom_point()
+```
 
+This works but is prone to error as we tweak our code because we'll have to make changes in three or more places.
+
+## Nest
+
+Because of this dilemma, we want to use functional programming as a means of iterating over a data frame. We can use existing library functions, compose custom functions, or compose anonymous functions. We apply those functions to the rows of a data frame using the {`purrr`} package -- specifically the `map()` family of functions.
+
+To properly map our function over a tall data frame, we often want to nest data frames within a data frame. The `nest()` function creates a **list column** (i.e. a list data type) consisting of *data frames* more accurately, called *tibbles*.
+
+The we *map* functions over those nested tibbles.
+
+```{r}
 starwars |> 
   filter(mass < 500) |> 
-  nest(data = -gender) |> 
-  mutate(my_plot = map(data, ~ .x |> ggplot(aes(height, mass)) + geom_point())) |> 
-  mutate(my_other_plot = map(data, make_plot)) |> 
-  mutate(my_plot_title = map2(data, gender, ~ .x |> ggplot(aes(height, mass)) + geom_point() + ggtitle(.y))) |> 
-  mutate(my_fit = map(data, ~ lm(mass ~ height, data = .x))) |> 
-  mutate(my_fit_tidy = map(my_fit, broom::tidy)) |> 
-  unnest(my_fit_tidy) |> 
-  filter(term != "(Intercept)") |> 
-  filter(p.value < 0.5)
+  nest(data = -gender) 
+  # mutate(my_plot = map(data, ~ .x |> ggplot(aes(height, mass)) + geom_point())) |> 
+  # mutate(my_other_plot = map(data, make_plot)) |> 
+  # mutate(my_plot_title = map2(data, gender, ~ .x |> ggplot(aes(height, mass)) + geom_point() + ggtitle(.y))) |> 
+  # mutate(my_fit = map(data, ~ lm(mass ~ height, data = .x))) |> 
+  # mutate(my_fit_tidy = map(my_fit, broom::tidy)) |> 
+  # unnest(my_fit_tidy) |> 
+  # filter(term != "(Intercept)") |> 
+  # filter(p.value < 0.5) |> 
   
-  pull(my_plot_title)
+# pull(my_plot_title)
 ```
 
 ### Custom function
@@ -80,6 +111,8 @@ make_plot <- function(my_df) {
     geom_point()
 }
 ```
+
+### Example
 
 ```{r}
 starwars |> 
@@ -107,3 +140,9 @@ babynames::babynames |>
 economics_long |> 
   make_key(variable)
 ```
+
+## More information
+
+-   GitHub Code for the [Rfun workshop on iteration, custom functions, and regex](https://github.com/libjohn/workshop_rfun_iterate)
+
+-   [YouTube playlist](https://www.youtube.com/watch?v=PrUnbYlC1kY&list=PLIUcX1JrVUNWW7RgPh9ysmJM3mBpIAlYG) supporting the above code.
