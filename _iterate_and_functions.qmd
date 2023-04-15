@@ -22,7 +22,10 @@ license: CC BY
 #| message: false
 #| warning: false
 library(tidyverse)
+library(fs)
 ```
+
+
 
 ## Reference code
 
@@ -30,11 +33,53 @@ Iterate by using `ggplot2::facet_wrap()` and tall data.
 
 ```{r}
 gapminder::gapminder |> 
+  select(year, pop, continent, country) |> 
   ggplot(aes(year, pop)) +
   geom_line(aes(color = country), show.legend = FALSE) +
   facet_wrap(vars(continent))
-  
 ```
+
+### making a function
+
+```{r}
+add_10 <- function (my_var) {
+  my_var <- (my_var + 10) / 3.14
+  round(my_var)
+}
+
+add_10(44)
+```
+### Vectorization
+
+```{r}
+my_vec <- seq(3, 15, by = 0.9)
+my_vec
+my_vec / 3.14
+```
+### Some functions are already vectorized
+
+```{r}
+my_files <- dir_ls("data", regex = "brodhead*")
+my_files
+
+
+my_big_df <- read_csv(my_files, skip = 11, id = "filename")
+
+my_big_df # |> distinct(filename)
+```
+
+### Nest 
+
+Using Tall data in a data frame to guide your interation
+
+```{r}
+my_big_df |> 
+  nest(my_file = -filename)
+
+starwars |> 
+  nest(my_gender = -gender)
+```
+
 
 ### Example
 
